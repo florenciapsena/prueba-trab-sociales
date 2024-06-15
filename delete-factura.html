@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Iniciar Sesión</title>
+      <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+      <link rel="stylesheet" href="styles/bootstrap.min.css">
+      <link rel="stylesheet" href="styles/features.css">
+      <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="navegacion-ubicacion">
+        <nav>
+        </nav>
+        <div class="grupo-enlaces">
+            <a class="enlace-navbar" href="/options.html">Inicio</a>
+            |
+            <a id="cerrar-sesion" class="enlace-navbar" href="/index.html">Cerrar Sesión</a>
+        </div>
+      </div>
+
+      <h2 class="centrar-titulo pb-2 border-bottom">Factura</h2>
+
+      <div class="container px-4 py-5" id="icon-grid">
+          <h4 class="pb-2">Buscar factura</h4>
+      
+          <form class="input-group mb-3 input-id-factura">
+              <input id="input-id-factura" type="text" class="form-control disabled" placeholder="ID de la factura">
+              <button class="btn btn-outline-secondary" type="submit" id="buscar-factura">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+              </button>
+          </form>
+      </div>
+
+      <div id="formulario-info" class="" style="display: none; ">
+        <div class="form-floating mb-3 form-group">
+            <input id="numero-matricula" name="numero-matricula" type="number" class="form-control" maxlength="50" value="" placeholder required>
+            <label for="floatingInput">N° de Matrícula</label>
+        </div>
+        <div class="form-floating mb-3 form-group">
+            <input id="anio" name="anio" type="number" maxlength="150" class="form-control" value="" placeholder required>
+            <label for="floatingInput">Año</label>
+        </div>
+        <div class="form-floating mb-3 form-group">
+            <input id="monto" name="monto" type="number" maxlength="150" class="form-control" value="" placeholder required>
+            <label for="floatingInput">Monto</label>
+        </div>
+        <span>En convenio</span>
+        <select id="en-convenio" name="en-convenio" class="form-select mb-3" aria-label="Default select example" required>
+            <option selected value="NO">No</option>
+            <option value="SI">Si</option>
+        </select>
+        <span>Estado de pago</span>
+        <select id="pago-estado" name="pago-estado" class="form-select mb-3" aria-label="Default select example" required>
+            <option selected value="IMPAGO">Impago</option>
+            <option value="PAGO PARCIAL">Pago Parcial</option>
+            <option value="PAGADO">Pagado</option>
+        </select>
+        <div class="form-floating mb-3 form-group">
+            <input name="saldo" type="number" maxlength="150" class="form-control" value="" placeholder required disabled>
+            <label for="floatingInput">Saldo</label>
+        </div>
+      </div>
+
+      <div class="boton-eliminar">
+        <button id="boton-eliminar" type="button" class="btn btn-danger disabled" 
+        data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar factura</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar factura</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>La factura será eliminada en el momento</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="confirmar-eliminar" data-bs-target="#staticBackdrop-2" type="button" class="btn btn-danger" data-bs-toggle="modal">Eliminar</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop-2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Factura eliminada</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!--Spiner de cargando-->
+      <div class="cargando" style="display: none;">
+          <div class="spinner-border m-5" role="status">
+              <span class="sr-only"></span>
+          </div>
+      </div>
+
+    </main>
+  </body>
+
+  <footer id="footer" class="footer" style="position: fixed;">
+    <!-- Nombre de tu lugar de trabajo -->
+    <a class="enlaces-footer" href="#">Colegio de Trabajadores Sociales</a>
+
+    <!-- Firma y enlace a tu portfolio -->
+    <div>
+        <a class="enlaces-footer" href="https://pabloandramirez.github.io/" target="_blank">Desarrollado por Pablo R.</a>
+    </div>
+  </footer>
+  <script type="module">
+    import { requireAuth } from './js/auth-admin.js';
+  
+    requireAuth(() => {
+      // Mostrar el contenido de la página protegida
+      console.log('Acceso permitido');
+    });
+    setInterval(requireAuth, 300000);
+  </script>
+  <script type="module" src="js/delete-factura.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/close-sesion.js"></script>
+</html>

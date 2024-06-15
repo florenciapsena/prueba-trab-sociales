@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Iniciar Sesión</title>
+      <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+      <link rel="stylesheet" href="styles/bootstrap.min.css">
+      <link rel="stylesheet" href="styles/features.css">
+      <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navegacion-ubicacion">
+        <nav>
+        </nav>
+        <div class="grupo-enlaces">
+            <a class="enlace-navbar" href="/options.html">Inicio</a>
+            |
+            <a id="cerrar-sesion" class="enlace-navbar" href="/index.html">Cerrar Sesión</a>
+        </div>
+    </div>
+    <main>
+
+        <div class="container px-4 py-5" id="icon-grid">
+            <h2 class="titulo-crear pb-2 border-bottom">Crear Matriculado</h2>
+            
+            <form id="mi-formulario">
+                <div class="division-formulario">
+                    <div class="form-floating mb-3 form-group">
+                        <input id="numero-matricula" name="numero-matricula" type="number" class="form-control" maxlength="50" placeholder required>
+                        <label for="floatingInput">Número de Matrícula</label>
+                    </div>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="nombres" name="nombres" type="text" maxlength="150" class="form-control" placeholder required>
+                        <label for="floatingInput">Nombre/s</label>
+                    </div>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="apellidos" name="apellidos" type="text" maxlength="150" class="form-control" placeholder required>
+                        <label for="floatingInput">Apellido/s</label>
+                    </div>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="dni" name="dni" type="number" maxlength="9" class="form-control" placeholder required>
+                        <label for="floatingInput">D.N.I. (Sin puntos)</label>
+                    </div>
+                    <span>Estado</span>
+                    <select id="estado" name="estado" class="form-select mb-3" aria-label="Default select example">
+                        <option selected value="ACTIVO">Activo</option>
+                        <option value="IRREGULAR">Irregular</option>
+                        <option value="SUSPENDIDO">Suspendido</option>
+                    </select>
+                </div>
+                <div class="division-formulario">
+                    <span>Categoria de matricula</span>
+                    <select id="categoria" name="categoria" class="form-select mb-3" aria-label="Default select example">
+                        <option selected value="A">A</option>
+                        <option id="categoria-b" value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                    <span>Becado o Monotributista(Si corresponde)</span>
+                    <select id="becado-monotributista" name="becado-monotributista" class="form-select mb-3" aria-label="Default select example" disabled>
+                        <option selected value="NO CORRESPONDE">No corresponde</option>
+                        <option value="BECADO">Becado</option>
+                        <option value="MONOTRIBUTISTA">Monotributista</option>
+                    </select>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="enlace-legajo" name="enlace-legajo" type="text" class="form-control" placeholder required>
+                        <label for="floatingInput">Enlace legajo</label>
+                    </div>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="email" name="email" type="email" maxlength="150" class="form-control" placeholder required>
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="telContacto" name="telContacto" type="number" class="form-control" maxlength="15" placeholder required>
+                        <label for="floatingInput">Télefono (sin 0 ni 15)</label>
+                    </div>
+                </div>
+            </form>
+            <button id="boton-crear" type="submit" class="btn btn-success">Crear</button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Matriculado creado</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+  </body>
+
+  <footer class="footer" style="position: relative;">
+    <!-- Nombre de tu lugar de trabajo -->
+    <a class="enlaces-footer" href="#">Colegio de Trabajadores Sociales</a>
+
+    <!-- Firma y enlace a tu portfolio -->
+    <div>
+        <a class="enlaces-footer" href="https://pabloandramirez.github.io/" target="_blank">Desarrollado por Pablo R.</a>
+    </div>
+</footer>
+  <script type="module">
+    import { requireAuth } from './js/auth-admin.js';
+
+    requireAuth(() => {
+      // Mostrar el contenido de la página protegida
+      console.log('Acceso permitido');
+    });
+    setInterval(requireAuth, 300000);
+  </script>
+  <script src="js/create-matriculado.js"></script>
+  <script src="js/close-sesion.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</html>

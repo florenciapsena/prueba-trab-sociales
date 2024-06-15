@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Iniciar Sesión</title>
+      <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+      <link rel="stylesheet" href="styles/bootstrap.min.css">
+      <link rel="stylesheet" href="styles/features.css">
+      <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="navegacion-ubicacion">
+        <nav>
+        </nav>
+        <div class="grupo-enlaces">
+            <a class="enlace-navbar" href="/options.html">Inicio</a>
+            |
+            <a id="cerrar-sesion" class="enlace-navbar" href="/index.html">Cerrar Sesión</a>
+        </div>
+      </div>
+
+      <h2 class="centrar-titulo pb-2 border-bottom">Matriculados</h2>
+
+      <div class="container px-4 py-5" id="icon-grid">
+          <h4 class="pb-2">Buscar matriculado</h4>
+      
+          <form class="input-group mb-3 input-id-matriculado">
+              <input id="input-id-matriculado" type="text" class="form-control disabled" placeholder="ID del matriculado">
+              <button class="btn btn-outline-secondary" type="submit" id="buscar-matriculado">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+              </button>
+          </form>
+      </div>
+
+      <div id="formulario-info" class="" style="display: none; ">
+        <div class="division-formulario">
+          <div class="form-floating mb-3 form-group">
+            <input id="numero-matricula" name="numero-matricula" type="number" class="form-control" maxlength="50" placeholder disabled>
+            <label for="floatingInput">Número de Matrícula</label>
+          </div>
+          <div class="form-floating mb-3 form-group">
+              <input id="nombres" name="nombres" type="text" maxlength="150" class="form-control" placeholder disabled>
+              <label for="floatingInput">Nombre/s y Apellido</label>
+          </div>
+          <div class="form-floating mb-3 form-group">
+              <input id="apellidos" name="apellidos" type="text" maxlength="150" class="form-control" placeholder disabled>
+              <label for="floatingInput">Nombre/s y Apellido</label>
+          </div>
+          <div class="form-floating mb-3 form-group">
+              <input id="dni" name="dni" type="number" maxlength="9" class="form-control" placeholder disabled>
+              <label for="floatingInput">D.N.I. (Sin puntos)</label>
+          </div>
+          <span>Categoria de matricula</span>
+          <select id="categoria" name="categoria" class="form-select mb-3" aria-label="Default select example" disabled>
+              <option selected value="">Elegir una categoria</option>    
+              <option value="A">A</option>
+              <option id="categoria-b" value="B">B</option>
+              <option value="C">C</option>
+          </select>
+          <span>Becado o Monotributista (Si corresponde)</span>
+          <select id="becado-monotributista" name="becado-monotributista" class="form-select mb-3" value aria-label="Default select example" disabled>
+              <option selected value="NO CORRESPONDE">No corresponde</option>
+              <option selected value="BECADO">Becado</option>
+              <option value="MONOTRIBUTISTA">Monotributista</option>
+          </select>
+        </div>
+        <div class="division-formulario">
+          <span>Estado</span>
+          <select id="estado" name="estado" class="form-select mb-3" aria-label="Default select example" disabled>
+              <option selected value="ACTIVO">Activo</option>
+              <option value="IRREGULAR">Irregular</option>
+              <option value="SUSPENDIDO">Suspendido</option>
+          </select>
+          <div class="form-floating mb-3 form-group">
+            <input id="usuario" name="usuario" type="text" class="form-control" placeholder required disabled>
+            <label for="floatingInput">Usuario</label>
+          </div>
+          <div class="form-floating mb-3 form-group">
+              <input id="enlace-legajo" name="enlace-legajo" type="text" class="form-control"placeholder required disabled>
+              <label for="floatingInput">Enlace legajo</label>
+          </div>
+          <div class="form-floating mb-3 form-group">
+              <input id="email" name="email" type="email" maxlength="150" class="form-control" placeholder required disabled>
+              <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating mb-3 form-group">
+              <input id="tel-contacto" name="telContacto" type="number" class="form-control" maxlength="15" placeholder required disabled>
+              <label for="floatingInput">Télefono (sin 0 ni 15)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="boton-eliminar">
+        <button id="boton-eliminar" type="button" class="btn btn-danger disabled" 
+        data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar matriculado</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Eliminar matriculad@</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El matriculad@ será eliminad@ en el momento</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="confirmar-eliminar" data-bs-target="#staticBackdrop-2" type="button" class="btn btn-danger" data-bs-toggle="modal">Eliminar</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop-2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Matriculad@ eliminado</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!--Spiner de cargando-->
+      <div class="cargando" style="display: none;">
+          <div class="spinner-border m-5" role="status">
+              <span class="sr-only"></span>
+          </div>
+      </div>
+
+    </main>
+  </body>
+
+  <footer id="footer" class="footer" style="position: fixed;">
+    <!-- Nombre de tu lugar de trabajo -->
+    <a class="enlaces-footer" href="#">Colegio de Trabajadores Sociales</a>
+
+    <!-- Firma y enlace a tu portfolio -->
+    <div>
+        <a class="enlaces-footer" href="https://pabloandramirez.github.io/" target="_blank">Desarrollado por Pablo R.</a>
+    </div>
+  </footer>
+  <script type="module">
+    import { requireAuth } from './js/auth-admin.js';
+  
+    requireAuth(() => {
+      // Mostrar el contenido de la página protegida
+      console.log('Acceso permitido');
+    });
+    setInterval(requireAuth, 300000);
+  </script>
+  <script type="module" src="js/delete-matriculado.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/close-sesion.js"></script>
+</html>

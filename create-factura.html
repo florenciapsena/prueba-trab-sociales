@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Iniciar Sesión</title>
+      <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+      <link rel="stylesheet" href="styles/bootstrap.min.css">
+      <link rel="stylesheet" href="styles/features.css">
+      <link href="styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navegacion-ubicacion">
+        <nav>
+        </nav>
+        <div class="grupo-enlaces">
+            <a class="enlace-navbar" href="/options.html">Inicio</a>
+            |
+            <a id="cerrar-sesion" class="enlace-navbar" href="/index.html">Cerrar Sesión</a>
+        </div>
+    </div>
+    <main>
+
+        <div class="container px-4 py-5" id="icon-grid">
+            <h2 class="centrar-titulo pb-2 border-bottom">Crear Factura</h2>
+            
+            <form id="mi-formulario">
+                <div class="division-formulario">
+                    <div class="form-floating mb-3 form-group">
+                        <input id="anio" name="anio" type="number" class="form-control" maxlength="50" placeholder required>
+                        <label for="floatingInput">Año</label>
+                    </div>
+                    <div class="form-floating mb-3 form-group">
+                        <input id="monto" name="monto" type="number" maxlength="10" class="form-control" placeholder required>
+                        <label for="floatingInput">Monto</label>
+                    </div>
+                    <span>En Convenio</span>
+                    <select id="en-convenio" name="en-convenio" class="form-select mb-3" aria-label="Default select example" required>
+                        <option selected value="NO">No</option>
+                        <option value="SI">Si</option>
+                    </select>
+                    <span>Estado del Pago</span>
+                    <select id="pago-estado" name="pago-estado" class="form-select mb-3" aria-label="Default select example" required>
+                        <option selected value="IMPAGO">Impago</option>
+                        <option value="PAGO PARCIAL">Pago Parcial</option>
+                        <option value="PAGADO">Pagado</option>
+                    </select>
+                    <div class="form-check form-switch">
+                        <input id="check-particular" class="form-check-input" type="checkbox" role="switch">
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Para un inscripto en particular</label>
+                    </div>
+                    <div id="contenedor-numero-matricula" class="form-floating mb-3 form-group ocultar">
+                        <input id="numero-matricula" name="numero-matricula" type="number" maxlength="10" class="form-control" placeholder required>
+                        <label for="floatingInput">Numero Matricula</label>
+                    </div>
+                    <div id="contenedor-matriculado" class="form-floating mb-3 form-group ocultar">
+                        <input id="matriculado" name="matriculado" type="text" maxlength="150" class="form-control" placeholder required disabled>
+                        <label for="floatingInput">Matriculad@</label>
+                    </div>
+                    <div id="contenedor-categoria" class="">
+                        <span>Categoria de matricula</span>
+                        <select id="categoria" name="categoria" class="form-select mb-3" aria-label="Default select example">
+                        <option selected value="A">A</option>
+                        <option id="categoria-b" value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                    </div>
+                    <div id="contenedor-becado-monotributista" class="">
+                        <span>Becado o Monotributista(Si corresponde)</span>
+                        <select id="becado-monotributista" name="becado-monotributista" class="form-select mb-3" aria-label="Default select example" disabled>
+                            <option selected value="NO CORRESPONDE">No corresponde</option>
+                            <option value="BECADO">Becado</option>
+                            <option value="MONOTRIBUTISTA">Monotributista</option>
+                        </select>
+                    </div>
+                    <div id="clean-matriculado" class="clean-matriculado ocultar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-arrow-clockwise rotate-icon" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                        </svg>
+                    </div>
+                </div>
+            </form>
+            <button id="boton-crear" type="submit" class="btn btn-success">Crear</button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Factura/s creada/s</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+  </body>
+
+  <footer class="footer">
+    <!-- Nombre de tu lugar de trabajo -->
+    <a class="enlaces-footer" href="#">Colegio de Trabajadores Sociales</a>
+
+    <!-- Firma y enlace a tu portfolio -->
+    <div>
+        <a class="enlaces-footer" href="https://pabloandramirez.github.io/" target="_blank">Desarrollado por Pablo R.</a>
+    </div>
+</footer>
+  <script type="module">
+    import { requireAuth } from './js/auth-admin.js';
+
+    requireAuth(() => {
+      // Mostrar el contenido de la página protegida
+      console.log('Acceso permitido');
+    });
+    setInterval(requireAuth, 300000);
+  </script>
+  <script src="js/create-factura.js"></script>
+  <script src="js/close-sesion.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</html>

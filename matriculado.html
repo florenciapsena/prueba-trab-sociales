@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/features.css">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="navegacion-ubicacion">
+        <nav class="menu-mobile flex-shrink-0 p-3">
+            <label id="hamburger" class="hamburger">
+                <svg viewBox="0 0 32 32">
+                  <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                  <path class="line" d="M7 16 27 16"></path>
+                </svg>
+            </label>
+            <ul id="sidebar" class="sidebar list-unstyled ps-0">
+              <li class="mb-1">
+                <a href="/index.html" class="btn btn-toggle-alternative d-inline-flex align-items-center rounded border-0 collapsed">
+                  Inicio
+                </a>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                  Institucional
+                </button>
+                <div class="collapse" id="dashboard-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Historia</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Normativas</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Organos de<br>Gobierno</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Pronunciamientos</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sedes</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                  Capacitacion
+                </button>
+                <div class="collapse" id="orders-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Ciclos</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Jornadas</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Convenios</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Becas</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Auspicios</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Congresos</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                  Matricula
+                </button>
+                <div class="collapse" id="account-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Prof.<br>Habilitados</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Situacion<br>Particular</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Arancel</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Solicitar<br>Matricula</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Altas/Bajas</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Jubilades</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Carnet/<br>Legajo</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <a href="/manteinance-page.html" class="btn btn-toggle-alternative d-inline-flex align-items-center rounded border-0 collapsed">
+                    Subcomision
+                </a>
+              </li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#representacion-collapse" aria-expanded="false">
+                  Representacion
+                </button>
+                <div class="collapse" id="representacion-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">FAAPSS</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">FEPUCH</a></li>
+                    <li><a href="/manteinance-page.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Bioetica</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mb-1">
+                <a href="/manteinance-page.html" class="btn btn-toggle-alternative d-inline-flex align-items-center rounded border-0 collapsed">
+                    Servicios
+                </a>
+              </li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="navigation">
+                <li>
+                    <a href="/index.html" title="Home">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="#home" title="Home">
+                        Institucional
+                        <svg xmlns="http://www.w3.org/2000/svg" class="chevron" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </a>
+    
+                    <div class="subnavigation__wrapper">
+                        <ul>
+                            <li>
+                                <a href="/manteinance-page.html" title="Services">
+                                    Historia
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Normativas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Organos de Gobierno
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Pronunciamientos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Sedes
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#blog" title="Blog">
+                        Capacitacion
+                        <svg xmlns="http://www.w3.org/2000/svg" class="chevron" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </a>
+                    <div class="subnavigation__wrapper">
+                        <ul>
+                            <li>
+                                <a href="/manteinance-page.html" title="Services">
+                                    Ciclos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Jornadas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Convenios
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Becas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Auspicios
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Portfolio">
+                                    Congresos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#company" title="Company">
+                        Matricula
+                        <svg xmlns="http://www.w3.org/2000/svg" class="chevron" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </a>
+                    <div class="subnavigation__wrapper">
+                        <ul>
+                            <li>
+                                <a href="/manteinance-page.html" title="About">
+                                    Prof. Habilitados
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Contact Us">
+                                    Situación Particular
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html">
+                                    Arancel
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html">
+                                    Solicitar Matricula
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html">
+                                    Altas/Bajas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html">
+                                    Jubilades
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html">
+                                    Carnet/<br>Legajo
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="/manteinance-page.html" title="Company">
+                        Subcomision
+                    </a>
+                </li>
+                <li>
+                    <a href="#company" title="Company">
+                        Representacion
+                        <svg xmlns="http://www.w3.org/2000/svg" class="chevron" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </a>
+                    <div class="subnavigation__wrapper">
+                        <ul>
+                            <li>
+                                <a href="/manteinance-page.html" title="About">
+                                    FAAPSS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html" title="Contact Us">
+                                    FEPUCH
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/manteinance-page.html">
+                                    Bioetica
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="/manteinance-page.html" title="Company">
+                        Servicios
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="navegacion-ubicacion">
+            <a class="enlace-navbar" href="/index.html">Inicio</a>
+            |
+            <a id="cerrar-sesion" class="enlace-navbar" href="/index.html">Cerrar Sesión</a>
+        </div>
+    </div>
+
+    <div class="centrado-matriculado">
+        <h2 class="pb-2 border-bottom" style="text-align: center; margin: 20px;">Información de cuota de ejercicio profesional</h2>
+
+        <div class="col">
+        <div class="card">
+          <div class="card-body" style="display: flex; justify-content: space-between;">
+            <div id="info-principal">
+                <h5 id="nombre-apellido" class="card-title">${nombreApellido}</h5>
+                <strong>Estado: </strong><span id="estado-matriculado"></span>
+                <p id="info-matriculado" class="card-text">Some quick example text to build on the card title and 
+                    make up the bulk of the card's content.</p>
+            </div>
+            <div id="ver-legajo">
+                <a id="link-legajo" href="" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" fill="#2EAB5E" class="bi bi-person-badge" viewBox="0 0 16 16">
+                        <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492z"/>
+                    </svg>
+                </a>
+                <p>Ver Legajo</p>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Numero de Matrícula: </strong> <span id="numero-matricula"></span></li>
+            <li class="list-group-item"><strong>DNI:</strong><span id="dni-matriculado">${dni}</span></li>
+            <li class="list-group-item"><strong>Categoría de matricula: </strong> <span id="categoria-matriculado">${categoria}</span> </li>
+            <li class="list-group-item"><strong>Becado o Monotributista: </strong> <span id="becado-mono-matriculado">${becadoOMonotributista}</span> </li>
+          </ul>
+        </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <div class="centrado-facturacion">
+        <h2 class="pb-2 border-bottom" style="text-align: center; margin: 20px;">Facturacion</h2>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button id="anio-facturacion" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        ${anio}
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Numero de Factura: </strong> <span id="numero-factura">${numeroFactura}</span> 
+                        <strong>Pago Estado:</strong> <span id="pago-estado">${pagoEstado}</span> 
+                        <strong>En Convenio: </strong> <span id="en-convenio">${enConvenio}</span> 
+                    </div>
+                    <div class="ver-facturacion">
+                        <a href="#" data-bs-target="#staticBackdrop" id="show-modal-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-receipt-cutoff" viewBox="0 0 16 16">
+                            <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5M11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/>
+                            <path d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118z"/>
+                        </svg>
+                        <strong>Ver Cuotas Pagas</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Modal -->
+    <div id="modales-cuotas">
+        <div class="item-modal">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Cuotas</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="accordion" id="accordion-cuotas">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          ${cuota}
+                                      </button>
+                                  </h2>
+                                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                          <strong>Numero de Cuota: </strong> ${numeroCuota}
+                                          <strong>Monto:</strong> ${monto}
+                                          <strong>Fecha de Pago: </strong> ${fechaPago}
+                                          <strong>Metodo de Pago: </strong> ${metodoPago}
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Spiner de cargando-->
+    <div class="cargando" style="display: none;">
+        <div class="spinner-border m-5" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+
+    <div class="socials-wrapper">
+        <button class="share-button">
+            <img src="img/chat.svg" alt="Share On Socials" />
+        </button>
+        <ul class="socials-menu">
+            <li class="social">
+                <a href="https://www.instagram.com/colegio.tschaco/" target="_blank" title="Instagram">
+                    <img src="img/instagram.svg" alt="Instagram" />
+                </a>
+            </li>
+            <li class="social">
+                <a href="https://wa.me/5493624250581" target="_blank" title="Whatsapp">
+                    <img src="img/whatsapp.svg" alt="Whatsapp" />
+                </a>
+            </li>
+            <li class="social">
+                <a href="https://www.youtube.com/@colegiodeprofesionalesdetr6337" target="_blank" title="Youtube">
+                    <img src="img/youtube.svg" alt="Youtube" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <footer class="footer">
+        <!-- Nombre de tu lugar de trabajo -->
+        <a href="#">Colegio de Trabajadores Sociales</a>
+
+        <!-- Firma y enlace a tu portfolio -->
+        <div>
+            <a class="enlaces-footer" href="https://pabloandramirez.github.io/" target="_blank">Desarrollado por Pablo R.</a>
+        </div>
+    </footer>
+    <script type="module">
+        import { requireAuth } from './js/auth.js';
+      
+        requireAuth(() => {
+          // Mostrar el contenido de la página protegida
+          console.log('Acceso permitido');
+        });
+        setInterval(requireAuth, 300000);
+    </script>
+    <script src="js/matriculado.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

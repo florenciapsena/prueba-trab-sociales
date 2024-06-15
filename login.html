@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/features.css">
+    <link rel="stylesheet" href="styles/sidebars.css">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="navegacion-ubicacion">
+        <nav class="flex-shrink-0 p-3">
+        </nav>
+        <nav>
+        </nav>
+        <div class="navegacion-ubicacion">
+            <a class="enlace-navbar" href="/index.html">Inicio</a>
+        </div>
+    </div>
+
+    <div class="container px-4 py-5 inicio-sesion" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Administrador</h2>
+    
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Usuario</label>
+              <input id="usuario" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Ingresar usuario" required="true" autocomplete="username">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input id="password" type="password" class="form-control" placeholder="Ingresar contraseña" required="true" autocomplete="current-password">
+            </div>
+            <div class="form-check">
+                <div class="recordar-usuario-container">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                </div>
+            </div>
+            <button type="submit" id="login-admin-btn" class="btn btn-primary">Ingresar</button>
+        </form>
+    </div>
+
+    <div class="cargando" style="display: none;">
+        <div class="spinner-border m-5" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+
+    <div class="socials-wrapper">
+        <button class="share-button">
+            <img src="img/chat.svg" alt="Share On Socials" />
+        </button>
+        <ul class="socials-menu">
+            <li class="social">
+                <a href="https://www.instagram.com/colegio.tschaco/" target="_blank" title="Instagram">
+                    <img src="img/instagram.svg" alt="Instagram" />
+                </a>
+            </li>
+            <li class="social">
+                <a href="https://wa.me/5493624250581" target="_blank" title="Whatsapp">
+                    <img src="img/whatsapp.svg" alt="Whatsapp" />
+                </a>
+            </li>
+            <li class="social">
+                <a href="https://www.youtube.com/@colegiodeprofesionalesdetr6337" target="_blank" title="Youtube">
+                    <img src="img/youtube.svg" alt="Youtube" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="footer" style="position: fixed;">
+        <!-- Nombre de tu lugar de trabajo -->
+        <a class="enlaces-footer" href="#">Colegio de Trabajadores Sociales</a>
+
+        <!-- Firma y enlace a tu portfolio -->
+        <div>
+            <a class="enlaces-footer" href="https://pabloandramirez.github.io/" target="_blank">Desarrollado por Pablo R.</a>
+        </div>
+    </footer>
+    <script src="js/login.js"></script>
+</body>
+</html>
